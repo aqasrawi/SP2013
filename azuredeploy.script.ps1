@@ -17,7 +17,7 @@ Select-AzureRmSubscription -SubscriptionId 3a4af7b3-b7ac-463d-9940-1d80445961a8
 #Set-AzureRmContext -SubscriptionID 3a4af7b3-b7ac-463d-9940-1d80445961a8
 
 #$srNumber = Read-Host ("SR Number ") # 'm2016'
-$srNumber = 'd2016'
+$srNumber = 'c2016'
 
 $resourceGroupName = 'RGsp' + $srNumber
 $location = 'east us 2'
@@ -27,11 +27,11 @@ $storageAccountNamePrefix  = 'storage' + $srNumber
 
 $sharepointFarmName = 'spfarm' + $srNumber
 $virtualNetworkName = 'spfarmVNET'+ $srNumber
-#$sppuplicIP = 'sppuplicIP'
+$sppuplicIP = 'sppuplicIP'
 
 New-AzureRmResourceGroup -Name $resourceGroupName -Location $Location -Verbose -Force
 
-$sppublicIP = New-AzureRmPublicIpAddress -AllocationMethod Dynamic -ResourceGroupName $resourceGroupName -Name $sppuplicIPName  -Location $location
+$sppublicIP = New-AzureRmPublicIpAddress -AllocationMethod Dynamic -ResourceGroupName $resourceGroupName -Name $sppuplicIP  -Location $location
 
 $parameters=@{
 
